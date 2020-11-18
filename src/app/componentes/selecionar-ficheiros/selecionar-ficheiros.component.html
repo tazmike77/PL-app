@@ -1,0 +1,38 @@
+<div class="col-12 fundo">
+  <div style="margin-top: 10px">
+    <div class="custom-file">
+      <input
+        type="file"
+        class="custom-file-input"
+        id="customFile"
+        (change)="onChange($event)"
+        multiple
+      />
+      <label class="custom-file-label" for="customFile" id="customFileLabel"
+        >Selecionar ficheiros</label
+      >
+    </div>
+  </div>
+  <div class="col-12 listaficheiros" *ngIf="files">
+    <h1><u>Lista de ficheiros selecionados</u></h1>
+    <div
+      class="col-12"
+      *ngFor="let nome of nomeFicheiros; let i = index"
+      style="margin: 3px; padding: 0px"
+    >
+      {{ i + 1 }} - {{ nome }}
+    </div>
+  </div>
+  <div style="margin-top: 10px">
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="onUpload()"
+      [disabled]="!files"
+    >
+      Enviar ficheiros
+    </button>
+  </div>
+</div>
+
+<div class="col-12"></div>

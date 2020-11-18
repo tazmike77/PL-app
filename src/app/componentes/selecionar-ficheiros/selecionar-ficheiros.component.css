@@ -1,0 +1,23 @@
+.fundo {
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 12px 12px 12px 12px;
+  position: absolute;
+  padding: 10px 10px 10px 10px;
+
+  width: calc(100% - 676px);
+  height: calc(100% - 401px);
+  top: 80px;
+  left: 351px;
+  min-width: 352px;
+  min-height: 373px;
+}
+
+.listaficheiros {
+  margin-top: 10px;
+  color: white;
+  font-size: large;
+  border: 1px solid white;
+  border-radius: 12px;
+  padding: 10px;
+}

@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const multer = require('multer');
 const spawn = require('child_process').spawn;
 
-const process = spawn('python', ['./pl2020.py', 'pedro']);
+
 
 
 const app = express();
@@ -20,9 +20,9 @@ const corsOptions = {
 app.use(cors(corsOptions));
 
 
-process.stdout.on('data', data => {
-  console.log(data.toString());
-});
+
+
+
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -53,7 +53,7 @@ const upload = multer({storage: storage});
 
 
 //multiplos ficheiros
-app.post("/uploads", upload.array('files'), (req, res, next) => {
+app.post("/uploads", upload.array('files'), async (req, res, next) => {
   const files = req.files;
   console.log(req.files.length)
   console.log(files[0])
@@ -63,7 +63,16 @@ app.post("/uploads", upload.array('files'), (req, res, next) => {
     error.httpStatusCode = 400
     return next(error)
   }
+
+
+
   for(let i = 0; i< files.length; i++){
+    let process = spawn('python', ['./main.py', files[i].originalname ] );
+
+    process.stdout.on('data', data => {
+      console.log(data.toString());
+
+    });
 
   }
   res.send(files);

@@ -1,25 +1,25 @@
-#Essa será a classe criada que conterá as verificações:
-import	ply.lex as lex
-from TreeManagement import TreeManagement
-from treelib import Node, Tree
+# Essa será a classe criada que conterá as verificações:
 from utils import slurp, GetTreeLevel
-
+from treelib import Node, Tree
+from TreeManagement import TreeManagement
+import ply.lex as lex
 
 
 class TAPLexer:
 
     def __init__(self):
         self.tree_manager = TreeManagement()
-        self.n_tests = 0 #quantidade total de testes
-        self.n_ok_tests = 0 #quantidade total de ok testes
-        self.n_nok_tests = 0 #quantidade total de not ok testes
-        self.n_subtests = 0 #quantidade total de subtestes
-        self.n_ok_subtests = 0 #quantidade total de ok subtestes
-        self.n_nok_subtests = 0 #quantidade total de not ok subtestes
+        self.n_tests = 0  # quantidade total de testes
+        self.n_ok_tests = 0  # quantidade total de ok testes
+        self.n_nok_tests = 0  # quantidade total de not ok testes
+        self.n_subtests = 0  # quantidade total de subtestes
+        self.n_ok_subtests = 0  # quantidade total de ok subtestes
+        self.n_nok_subtests = 0  # quantidade total de not ok subtestes
         self.lexer = None
-    
-    tokens = ('N_TESTS', 'OK_TEST', 'NOK_TEST', 'N_SUBTESTS', 'OK_SUBTEST', 'NOK_SUBTEST', 'COMMENT')
-    
+
+    tokens = ('N_TESTS', 'OK_TEST', 'NOK_TEST', 'N_SUBTESTS',
+              'OK_SUBTEST', 'NOK_SUBTEST', 'COMMENT')
+
     t_ignore = "\n"
 
     def t_error(self, t):
@@ -28,11 +28,11 @@ class TAPLexer:
 
     def t_COMMENT(self, t):
         r"-\s.*"
-        t.value = t.value.replace("- ","")
+        t.value = t.value.replace("- ", "")
         return t
 
     def t_N_TESTS(self, t):
-        r"[0-9]\.\.[0-9]+" 
+        r"[0-9]\.\.[0-9]+"
         self.n_tests += int(t.value[3:])
         return t
 
@@ -63,8 +63,8 @@ class TAPLexer:
         r"\s+(not\sok)\s[0-9]+"
         self.n_nok_subtests += 1
         self.tree_manager.CreateSubtestNotOkNode(t.value)
-        return t    
-    
+        return t
+
     def build(self, **kwargs):
         self.lexer = lex.lex(module=self, **kwargs)
 
@@ -73,4 +73,4 @@ class TAPLexer:
 
     def execute(self):
         for token in iter(self.lexer.token, None):
-            print(token)
+            pass

@@ -1,0 +1,154 @@
+
+{
+  "header": {
+    "reportVersion": 1,
+    "event": "Allocation failed - JavaScript heap out of memory",
+    "trigger": "FatalError",
+    "filename": "report.20201120.182108.16428.0.001.json",
+    "dumpEventTime": "2020-11-20T18:21:08Z",
+    "dumpEventTimeStamp": "1605896468993",
+    "processId": 16428,
+    "cwd": "C:\\Users\\Pedro.Silva\\Desktop\\PL2020\\PL\\PL-app\\Backend",
+    "commandLine": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "src/index.js"
+    ],
+    "nodejsVersion": "v12.14.1",
+    "wordSize": 64,
+    "arch": "x64",
+    "platform": "win32",
+    "componentVersions": {
+      "node": "12.14.1",
+      "v8": "7.7.299.13-node.16",
+      "uv": "1.33.1",
+      "zlib": "1.2.11",
+      "brotli": "1.0.7",
+      "ares": "1.15.0",
+      "modules": "72",
+      "nghttp2": "1.40.0",
+      "napi": "5",
+      "llhttp": "2.0.1",
+      "http_parser": "2.8.0",
+      "openssl": "1.1.1d",
+      "cldr": "35.1",
+      "icu": "64.2",
+      "tz": "2019c",
+      "unicode": "12.1"
+    },
+    "release": {
+      "name": "node",
+      "lts": "Erbium",
+      "headersUrl": "https://nodejs.org/download/release/v12.14.1/node-v12.14.1-headers.tar.gz",
+      "sourceUrl": "https://nodejs.org/download/release/v12.14.1/node-v12.14.1.tar.gz",
+      "libUrl": "https://nodejs.org/download/release/v12.14.1/win-x64/node.lib"
+    },
+    "osName": "Windows_NT",
+    "osRelease": "10.0.19041",
+    "osVersion": "Windows 10 Pro",
+    "osMachine": "x86_64",
+    "cpus": [
+      {
+        "model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+        "speed": 2112,
+        "user": 30401468,
+        "nice": 0,
+        "sys": 30988093,
+        "idle": 421887500,
+        "irq": 6193109
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+        "speed": 2112,
+        "user": 27861218,
+        "nice": 0,
+        "sys": 22355031,
+        "idle": 433060484,
+        "irq": 2244343
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+        "speed": 2112,
+        "user": 40040843,
+        "nice": 0,
+        "sys": 23502718,
+        "idle": 419733156,
+        "irq": 690234
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+        "speed": 2112,
+        "user": 28506843,
+        "nice": 0,
+        "sys": 15990515,
+        "idle": 438779375,
+        "irq": 359703
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+        "speed": 2112,
+        "user": 33905015,
+        "nice": 0,
+        "sys": 18610406,
+        "idle": 430761312,
+        "irq": 428890
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+        "speed": 2112,
+        "user": 24945921,
+        "nice": 0,
+        "sys": 14166734,
+        "idle": 444164015,
+        "irq": 369078
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+        "speed": 2112,
+        "user": 34354359,
+        "nice": 0,
+        "sys": 18190625,
+        "idle": 430731734,
+        "irq": 381265
+      },
+      {
+        "model": "Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz",
+        "speed": 2112,
+        "user": 29491343,
+        "nice": 0,
+        "sys": 15296046,
+        "idle": 438489328,
+        "irq": 265296
+      }
+    ],
+    "networkInterfaces": [
+      {
+        "name": "NordLynx",
+        "internal": false,
+        "mac": "00:00:00:00:00:00",
+        "address": "10.5.0.2",
+        "netmask": "255.255.0.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "f0:6e:0b:c4:d5:b8",
+        "address": "fe80::49d6:623b:74dc:f668",
+        "netmask": "ffff:ffff:ffff:ffff::",
+        "family": "IPv6",
+        "scopeid": 12
+      },
+      {
+        "name": "Wi-Fi",
+        "internal": false,
+        "mac": "f0:6e:0b:c4:d5:b8",
+        "address": "172.16.42.14",
+        "netmask": "255.255.255.0",
+        "family": "IPv4"
+      },
+      {
+        "name": "Loopback Pseudo-Interface 1",
+        "internal": true,
+        "mac": "00:00:00:00:00:00",
+        "address": "::1",
+        "netmask": "ffff:ffff:ffff:ffff:ffff:

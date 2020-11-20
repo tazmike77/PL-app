@@ -6,6 +6,7 @@ const spawn = require('child_process').spawn;
 
 
 
+let avancar = 0;
 
 const app = express();
 app.use(bodyParser.json());
@@ -32,7 +33,7 @@ const storage = multer.diskStorage({
   // By default, multer removes file extensions so let's add them back
   filename: (req, file, cb) => {
     const parts = file.mimetype.split("/");
-    console.log(parts[0])
+    // console.log(parts[0])
       cb(null, `PL_${file.originalname}`);
   }
 });
@@ -51,12 +52,20 @@ const upload = multer({storage: storage});
 //   res.send(file);
 // })
 
+let testes = '';
 
 //multiplos ficheiros
 app.post("/uploads", upload.array('files'), async (req, res, next) => {
+
   const files = req.files;
-  console.log(req.files.length)
-  console.log(files[0])
+  // const arrays = JSON.parse(files)
+
+  const dados = [];
+
+  for(let i = 0; i < files.length; i++){
+    dados.push(files[i].originalname)
+  }
+
 
   if(!files){
     const error = new Error('nenhum ficheiro')
@@ -64,17 +73,17 @@ app.post("/uploads", upload.array('files'), async (req, res, next) => {
     return next(error)
   }
 
+    let process = spawn('python', ['./main.py', dados ] );
+
+      process.stdout.on('data', data => {
+        console.log(data.toString());
 
 
-  for(let i = 0; i< files.length; i++){
-    let process = spawn('python', ['./main.py', files[i].originalname ] );
+      });
 
-    process.stdout.on('data', data => {
-      console.log(data.toString());
 
-    });
 
-  }
+
   res.send(files);
 })
 

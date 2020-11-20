@@ -11,11 +11,13 @@ import { MatIconModule} from '@angular/material/icon';
 import {  MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import {  MatProgressBarModule } from '@angular/material/progress-bar';
+import { HistoricoTestesComponent } from './componentes/historico-testes/historico-testes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SelecionarFicheirosComponent
+    SelecionarFicheirosComponent,
+    HistoricoTestesComponent
   ],
   imports: [
     BrowserModule,

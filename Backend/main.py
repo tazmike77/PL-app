@@ -5,19 +5,28 @@ from utils import slurp
 import ply.lex as lex
 import sys
 
-a = TAPLexer()
+recebido = sys.argv[1].split(',')
 
-a.build()
+aEnviar = []
 
-a.inputFile("./inputs/" + sys.argv[1])
+tamanho = len(recebido)
 
+for nome in recebido:
+    a = TAPLexer()
+    a.build()
+    a.inputFile("./inputs/" + nome)
+    a.execute()
+    data = a.tree_manager.mainTree.to_json()
+    aEnviar.append(nome + ' ' + data)
 
-a.execute()
+print(aEnviar)
+
 
 # print(a.tree_manager.mainTree.show())
 
 data = a.tree_manager.mainTree.to_json()
+# print(data)
 
-with open('./data.json', 'w') as outfile:
-    outfile.write(data)
-    outfile.close()
+# with open('./data.json', 'w') as outfile:
+#     outfile.write(data)
+#     outfile.close()

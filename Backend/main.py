@@ -8,16 +8,16 @@ import os
 
 relativePath = os.path.dirname(os.path.abspath(__file__))
 
-#Files
-received = ["teste1.t", "teste2.t", "teste3.t", "teste4.t", "teste5.t", "teste6.t", "teste7.t"]
-#received = sys.argv[1].split(',')
+# Files
+#received = ["teste1.t", "teste2.t", "teste3.t", "teste4.t", "teste5.t", "teste6.t", "teste7.t"]
+received = sys.argv[1].split(',')
 
-#Lexer
+# Lexer
 lex = TAPLexer()
 lex.build()
 
-#File global and individual info
-globalStats = GlobalStats() 
+# File global and individual info
+globalStats = GlobalStats()
 globalStats.LoadFile(relativePath + "\\globalstats.json")
 
 fileInfo = FileInfo()
@@ -32,4 +32,4 @@ for name in received:
     globalStats.SaveToFile(relativePath + "\\globalstats.json")
     lex.clearResults()
 
-print(globalStats.__dict__)
+print(json.dumps(globalStats.__dict__))

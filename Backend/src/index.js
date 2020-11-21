@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const multer = require('multer');
 const spawn = require('child_process').spawn;
+const path = require('path');
 
 
 
@@ -52,6 +53,12 @@ const upload = multer({storage: storage});
 
 let testes = '';
 
+
+//envia a lista de todos os testes realizados
+app.get( '/hist-Tests', function ( request, response ) {
+  response.json( require('fs').readFileSync('./fileInfo.json', 'utf8') );
+});
+
 //multiplos ficheiros
 app.post("/uploads", upload.array('files'), async (req, res, next) => {
 
@@ -74,8 +81,12 @@ app.post("/uploads", upload.array('files'), async (req, res, next) => {
     let process = spawn('python', ['./main.py', dados ] );
 
       process.stdout.on('data', data => {
-        console.log(data.toString());
-        res.send(JSON.stringify(data));
+        let dataFinal= data.toString().split('{')
+        dataFinal = '{' + dataFinal[1];
+        dataFinal = dataFinal.split('}')[0] + '}'
+
+
+        res.(dataFinal);
 
 
       });
@@ -85,6 +96,8 @@ app.post("/uploads", upload.array('files'), async (req, res, next) => {
 
 
 })
+
+
 
 
 app.use((err,req, res, next) => res.json({error: err.message}));

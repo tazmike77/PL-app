@@ -16,15 +16,39 @@
       </div>
       <!-- esta div vai apresentar os testes -->
       <div class="col-6 testes">
-        <div class="col-12 cabecalhoTestes"></div>
-        <div class="col-6 testesOK"></div>
-        <div class="col-6 testesNOK"></div>
+        <div class="col-12 cabecalhoTestes">
+          <h2 style="color: white; margin: 12px 0px 0px 0px">
+            Total de testes: {{ totalTestes }}
+          </h2>
+        </div>
+        <div class="col-6 testesOK">
+          <h3 style="color: white; margin: 12px 0px 0px 0px">
+            Total de testes OK: {{ totalTestesOK }}
+          </h3>
+        </div>
+        <div class="col-6 testesNOK">
+          <h3 style="color: white; margin: 12px 0px 0px 0px">
+            Total de testes NOK: {{ totalTestesNOK }}
+          </h3>
+        </div>
       </div>
       <!-- esta div vai apresentar os subtestes -->
       <div class="col-6 subtestes">
-        <div class="col-12 cabecalhoTestes"></div>
-        <div class="col-6 testesOK"></div>
-        <div class="col-6 testesNOK"></div>
+        <div class="col-12 cabecalhosubTestes">
+          <h2 style="color: white; margin: 12px 0px 0px 0px">
+            Total de Sub-testes: {{ totalsubTestes }}
+          </h2>
+        </div>
+        <div class="col-6 subtestesOK">
+          <h3 style="color: white; margin: 12px 0px 0px 0px">
+            Total de sub-testes OK: {{ totalsubTestesOK }}
+          </h3>
+        </div>
+        <div class="col-6 subtestesNOK">
+          <h3 style="color: white; margin: 12px 0px 0px 0px">
+            Total de sub-testes NOK: {{ totalsubTestesNOK }}
+          </h3>
+        </div>
       </div>
     </div>
   </div>

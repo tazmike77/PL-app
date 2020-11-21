@@ -9,6 +9,14 @@ export class EstatisticasComponent implements OnInit {
 
 
   totalF = 0;
+  totalTestes = 0;
+  totalTestesOK = 0;
+  totalTestesNOK = 0;
+
+  totalsubTestes = 0;
+  totalsubTestesOK = 0;
+  totalsubTestesNOK = 0;
+
 
   constructor() { }
 

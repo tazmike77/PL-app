@@ -90,3 +90,36 @@
   border-radius: 12px;
   background-color: black;
 }
+
+.cabecalhosubTestes {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 320px;
+  height: 70px;
+  border: 2px solid white;
+  border-radius: 12px;
+  background-color: black;
+}
+
+.subtestesOK {
+  position: absolute;
+  left: 10px;
+  top: 90px;
+  width: 155px;
+  height: 90px;
+  border: 2px solid white;
+  border-radius: 12px;
+  background-color: black;
+}
+
+.subtestesNOK {
+  position: absolute;
+  left: 175px;
+  top: 90px;
+  width: 155px;
+  height: 90px;
+  border: 2px solid white;
+  border-radius: 12px;
+  background-color: black;
+}

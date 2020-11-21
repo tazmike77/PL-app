@@ -1,0 +1,69 @@
+/* .PlanoFundo {
+  width: 100%;
+  height: 95%;
+  background-color: rgb(255, 255, 255);
+}
+
+.moldura {
+  background-color: rgb(173, 146, 146);
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 12px;
+  left: calc(50% - 400px);
+  top: 30px;
+  width: 800px;
+  height: 600px;
+}
+
+.filtro {
+  position: absolute;
+  top: 120px;
+  width: 300px;
+  height: 40px;
+}
+
+mat-form-field,
+mat-form-field-label {
+  color: white;
+}
+
+td,
+th {
+  width: 25%;
+}
+
+mat-form-field {
+  position: absolute;
+  top: 0px;
+  left: 40px;
+  font-size: 22px;
+  width: 300px;
+  color: white;
+}
+
+table-row {
+  height: 1px;
+}
+
+.lista {
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 0px 0px 0px 12px;
+  position: absolute;
+  padding: 0px;
+  overflow-y: scroll;
+  width: calc(100% - 120px);
+  height: calc(100% - 256px);
+  top: 180px;
+  left: 60px;
+} */
+
+/* Structure */
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}

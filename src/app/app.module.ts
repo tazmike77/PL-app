@@ -15,6 +15,8 @@ import { EstatisticasComponent } from './componentes/estatisticas/estatisticas.c
 import { TodosOsTestesComponent } from './componentes/todos-os-testes/todos-os-testes.component';
 import { ResultadoTestesComponent } from './componentes/resultado-testes/resultado-testes.component';
 import {MatDividerModule} from '@angular/material/divider';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatTableModule } from '@angular/material/table';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import {MatDividerModule} from '@angular/material/divider';
     MatButtonModule,
     MatCardModule,
     MatProgressBarModule,
-    MatDividerModule
+    MatDividerModule,
+    MatFormFieldModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

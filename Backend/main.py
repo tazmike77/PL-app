@@ -4,40 +4,32 @@ import json
 from globalstats import GlobalStats
 from filesinfo import FileInfo
 import sys
+import os
+
+relativePath = os.path.dirname(os.path.abspath(__file__))
 
 #Files
-recebidos = sys.argv[1].split(',')
+received = ["teste1.t", "teste2.t", "teste3.t", "teste4.t", "teste5.t", "teste6.t", "teste7.t"]
+#received = sys.argv[1].split(',')
 
 #Lexer
 lex = TAPLexer()
 lex.build()
 
-<<<<<<< HEAD
-for nome in recebido:
-    a = TAPLexer()
-    a.build()
-    a.inputFile("./inputs/" + nome)
-    a.execute()
-    data = a.tree_manager.mainTree.to_json()
-    aEnviar.append(data)
-=======
 #File global and individual info
 globalStats = GlobalStats() 
-globalStats.LoadFile("globalstats.json")
->>>>>>> 055d84f... update main
+globalStats.LoadFile(relativePath + "\\globalstats.json")
 
 fileInfo = FileInfo()
 
-for nome in recebidos:
-    fullPath = "./inputs/" + nome
+for name in received:
+    fullPath = relativePath + "\\inputs\\" + name
     lex.inputFile(fullPath)
-    lex.execute()
+    lex.execute(name)
     globalStats.UpdateStats(lex)
     fileInfo.UpdateFileInfo(globalStats, fullPath, lex)
-    fileInfo.SaveToJSON("fileInfo.json")
-    globalStats = globalStats.SaveToFile("globalstats.json")
+    fileInfo.SaveToJSON(relativePath + "\\fileInfo.json")
+    globalStats.SaveToFile(relativePath + "\\globalstats.json")
+    lex.clearResults()
 
 print(globalStats.__dict__)
-    
-
-

@@ -49,7 +49,7 @@ class GlobalStats():
                 self.totalFiles = obj_dict["totalFiles"]
                 self.totalTests = obj_dict["totalTests"]
                 self.totalOkTests = obj_dict["totalOkTests"]
-                self.totalNotOktests = obj_dict["totalNotOkTests"]
+                self.totalNotOktests = obj_dict["totalNotOktests"]
                 self.totalSubtests = obj_dict["totalSubtests"]
                 self.totalOkSubtests = obj_dict["totalOkSubtests"]
                 self.totalNotOkSubtests = obj_dict["totalNotOkSubtests"]

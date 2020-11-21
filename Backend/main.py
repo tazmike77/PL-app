@@ -17,7 +17,7 @@ for nome in recebido:
     a.inputFile("./inputs/" + nome)
     a.execute()
     data = a.tree_manager.mainTree.to_json()
-    aEnviar.append(nome + ' ' + data)
+    aEnviar.append(data)
 
 print(aEnviar)
 

@@ -4,6 +4,7 @@ from treelib import Node, Tree
 from utils import slurp, GetTreeLevel
 from datetime import datetime
 import os
+import json
 
 class TAPLexer:
     '''
@@ -104,10 +105,21 @@ class TAPLexer:
         self.saveTreeToJson(name)
     
     def saveTreeToJson(self, name):
-        data = self.tree_manager.mainTree.to_json()
+        filePath = self.relativePath + '\\treefiles\\trees.json'
+        jsonData = json.loads(self.tree_manager.mainTree.to_json())
         _dateTime = datetime.today().strftime('%Y-%m-%d-%H_%M_%S')
-        with open(self.relativePath + '\\treefiles\\' + _dateTime + name + ".json",'w') as outfile:
-            outfile.write(data)
+        try:
+            with open(filePath) as f:
+                data = json.load(f)
+        except:
+            data = {"trees":[]}
+
+        temp = data["trees"]
+        temp.append(jsonData)
+        with open(filePath, 'w') as f:
+            json.dump(data, f)
+        #with open(self.relativePath + '\\treefiles\\' + _dateTime + name + ".json",'w') as outfile:
+            #outfile.write(data)
     
     def clearResults(self):
         self.n_tests = 0

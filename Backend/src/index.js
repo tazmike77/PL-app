@@ -89,20 +89,17 @@ app.post("/uploads", upload.array('files'), async (req, res, next) => {
         let dataFinal= data.toString().split('{')
         dataFinal = '{' + dataFinal[1];
         dataFinal = dataFinal.split('}')[0] + '}'
+<<<<<<< HEAD
 
 
 
 
 
+=======
+        res.send(dataFinal);
+>>>>>>> 663403cfc452e191bb272a4524daeae13ffbf3af
       });
-
-
-
-
-
 })
-
-
 
 
 app.use((err,req, res, next) => res.json({error: err.message}));

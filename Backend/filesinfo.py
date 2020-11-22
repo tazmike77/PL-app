@@ -1,6 +1,7 @@
 import time
 import json
 import os
+from datetime import datetime
 
 class FileInfo:
 
@@ -19,6 +20,7 @@ class FileInfo:
         self.id = None
         self.name = None
         self.dateTime = None
+        self.date = None
         self.ok_tests = None
         self.nok_tests = None
         self.ok_subtests = None
@@ -41,6 +43,7 @@ class FileInfo:
         self.id = globalStats.totalFiles
         self.name = os.path.basename(filePath)
         self.dateTime = time.asctime()
+        self.date     = datetime.today().strftime('%Y-%m-%d')
         self.ok_tests = lexObj.n_ok_tests
         self.nok_tests = lexObj.n_nok_tests
         self.ok_subtests = lexObj.n_ok_subtests

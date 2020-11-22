@@ -17,6 +17,7 @@ import { ResultadoTestesComponent } from './componentes/resultado-testes/resulta
 import {MatDividerModule} from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
+import { GraficosComponent } from './componentes/graficos/graficos.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MatTableModule } from '@angular/material/table';
     EstatisticasComponent,
     TodosOsTestesComponent,
     ResultadoTestesComponent,
+    GraficosComponent,
 
   ],
   imports: [

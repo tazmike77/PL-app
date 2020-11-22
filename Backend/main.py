@@ -9,8 +9,8 @@ import os
 relativePath = os.path.dirname(os.path.abspath(__file__))
 
 # Files
-#received = ["teste1.t", "teste2.t", "teste3.t", "teste4.t", "teste5.t", "teste6.t", "teste7.t"]
-received = sys.argv[1].split(',')
+received = ["teste1.t", "teste2.t", "teste3.t", "teste4.t", "teste5.t", "teste6.t", "teste7.t"]
+#received = sys.argv[1].split(',')
 
 # Lexer
 lex = TAPLexer()

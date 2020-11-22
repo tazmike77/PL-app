@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-estatisticas',
@@ -18,9 +20,32 @@ export class EstatisticasComponent implements OnInit {
   totalsubTestesNOK = 0;
 
 
-  constructor() { }
+  constructor(private http: HttpClient, private router: Router) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+    this.http.get('http://localhost:8000/estatisticas').subscribe( res => {
+
+    let dados = (JSON.parse(res.toString()));
+
+    console.log(dados)
+     this.totalF = dados['totalFiles'];
+     this.totalTestes = dados['totalTests'];
+     this.totalTestesOK = dados['totalOkTests'];
+     this.totalTestesNOK = dados['totalNotOktests'];
+     this.totalsubTestes = dados['totalSubtests'];
+     this.totalsubTestesOK = dados['totalOkSubtests'];
+     this.totalsubTestesNOK = dados['totalNotOkSubtests'];
+  });
+
   }
+
+  clicando(){
+    this.router.navigate(["/"]).then(result=>{window.location.href = 'http://127.0.0.1:8080/graficos/ichartTable.html';});
+  }
+  clicando2(){
+    this.router.navigate(["/"]).then(result=>{window.location.href = 'http://127.0.0.1:8080/graficos/treetable.html';});
+  }
+
 
 }

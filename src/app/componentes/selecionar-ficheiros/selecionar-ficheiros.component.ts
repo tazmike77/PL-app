@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { UploadServiceService } from './upload-service.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-selecionar-ficheiros',
@@ -11,7 +13,8 @@ export class SelecionarFicheirosComponent implements OnInit {
   files: Set<File>; //evitar arquivos duplicados
   nomeFicheiros = [];
 
-  constructor(private service: UploadServiceService) { }
+  constructor(private service: UploadServiceService,
+              private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -35,7 +38,9 @@ export class SelecionarFicheirosComponent implements OnInit {
     if (this.files && this.files.size > 0){
       this.service.upload(this.files, 'http://localhost:8000/uploads')
         .subscribe(res => {
-          console.log(res);
+          if(res){alert('Sucesso');
+          this.router.navigate(['/estatisticas']);
+        }
         });
 
     }

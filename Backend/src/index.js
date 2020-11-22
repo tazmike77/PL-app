@@ -55,6 +55,13 @@ let testes = '';
 
 
 //envia a lista de todos os testes realizados
+app.get( '/estatisticas', function ( request, response ) {
+
+  console.log('estats');
+  response.json( require('fs').readFileSync('./globalstats.json', 'utf8') );
+});
+
+//envia a lista de todos os testes realizados
 app.get( '/hist-Tests', function ( request, response ) {
   response.json( require('fs').readFileSync('./fileInfo.json', 'utf8') );
 });
@@ -78,26 +85,14 @@ app.post("/uploads", upload.array('files'), async (req, res, next) => {
     return next(error)
   }
 
-  dados1 ={
-    nome: 'pedro'
-  };
 
-  res.send(dados1);
     let process = spawn('python', ['./main.py', dados ] );
 
       process.stdout.on('data', data => {
         let dataFinal= data.toString().split('{')
         dataFinal = '{' + dataFinal[1];
         dataFinal = dataFinal.split('}')[0] + '}'
-<<<<<<< HEAD
-
-
-
-
-
-=======
         res.send(dataFinal);
->>>>>>> 663403cfc452e191bb272a4524daeae13ffbf3af
       });
 })
 

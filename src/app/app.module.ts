@@ -17,7 +17,8 @@ import { ResultadoTestesComponent } from './componentes/resultado-testes/resulta
 import {MatDividerModule} from '@angular/material/divider';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatTableModule } from '@angular/material/table';
-import { GraficosComponent } from './componentes/graficos/graficos.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { GraficosComponent } from './componentes/graficos/graficos.component';
     EstatisticasComponent,
     TodosOsTestesComponent,
     ResultadoTestesComponent,
-    GraficosComponent,
+
 
   ],
   imports: [
@@ -41,7 +42,8 @@ import { GraficosComponent } from './componentes/graficos/graficos.component';
     MatProgressBarModule,
     MatDividerModule,
     MatFormFieldModule,
-    MatTableModule
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

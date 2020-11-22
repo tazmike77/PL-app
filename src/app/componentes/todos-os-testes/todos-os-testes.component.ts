@@ -17,6 +17,7 @@ export interface PeriodicElement {
 
 // ];
 
+
 const ELEMENT_DATA: PeriodicElement[] = [
   {position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
   {position: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
@@ -36,6 +37,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
   styleUrls: ['./todos-os-testes.component.css']
 })
 export class TodosOsTestesComponent implements OnInit {
+
+
+  stringifiedData: any;
+  parsedJson: any;
 
   // resultado = [{
   //   id: '123',
@@ -75,7 +80,15 @@ export class TodosOsTestesComponent implements OnInit {
   }
 
   getdata(){
-    this.http.get('http://localhost:8000/hist-Tests').subscribe((res) => console.log(res));
+    this.http.get('http://localhost:8000/hist-Tests').subscribe((res) => {
+
+      this.stringifiedData = JSON.stringify(res[0]);
+      console.log("With Stringify :" , this.stringifiedData);
+      this.parsedJson = JSON.parse(this.stringifiedData);
+      console.log("With Parsed JSON :" , this.parsedJson);
+
+
+    });
   }
 
 }

@@ -78,6 +78,11 @@ app.post("/uploads", upload.array('files'), async (req, res, next) => {
     return next(error)
   }
 
+  dados1 ={
+    nome: 'pedro'
+  };
+
+  res.send(dados1);
     let process = spawn('python', ['./main.py', dados ] );
 
       process.stdout.on('data', data => {
@@ -86,7 +91,7 @@ app.post("/uploads", upload.array('files'), async (req, res, next) => {
         dataFinal = dataFinal.split('}')[0] + '}'
 
 
-        res.(dataFinal);
+
 
 
       });

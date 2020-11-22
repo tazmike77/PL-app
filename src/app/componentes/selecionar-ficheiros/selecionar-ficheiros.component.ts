@@ -24,7 +24,7 @@ export class SelecionarFicheirosComponent implements OnInit {
 
 
     this.files = new Set();
-    for(let i = 0; i< ficheiros_selecionados.length; i++){
+    for (let i = 0; i< ficheiros_selecionados.length; i++){
      this.nomeFicheiros.push(ficheiros_selecionados[i].name);
      this.files.add(ficheiros_selecionados[i]);
     }
@@ -32,13 +32,11 @@ export class SelecionarFicheirosComponent implements OnInit {
   }
 
   onUpload(){
-    if(this.files && this.files.size > 0){
+    if (this.files && this.files.size > 0){
       this.service.upload(this.files, 'http://localhost:8000/uploads')
         .subscribe(res => {
-          const obj = JSON.parse(res[0]);
-          console.log(obj)
-
-        })
+          console.log(res);
+        });
 
     }
   }

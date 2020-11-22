@@ -47,3 +47,5 @@ Thumbs.db
 
 #node
 /Backend/node_modules
+
+/Backend/treefiles/*.json

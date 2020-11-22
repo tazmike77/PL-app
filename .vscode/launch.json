@@ -5,11 +5,48 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Attach",
+            "port": 4200,
+            "request": "attach",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "type": "pwa-node"
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
             "url": "http://localhost:4200",
             "webRoot": "${workspaceFolder}"
-        }
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "backend attach",
+            "processId": "${command:PickProcess}"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "backend nodemon",
+            "runtimeExecutable": "nodemon",
+            "program": "${workspaceFolder}/Backend/index.js",
+            "restart": true,
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "backend node",
+            "program": "${workspaceFolder}/Backend/index.js"
+        },
+        {
+            "type": "node",
+            "request": "attach",
+            "name": "backend attach",
+            "port": 8526
+        },
     ]
 }

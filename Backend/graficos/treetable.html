@@ -27,12 +27,14 @@
         }
 
         var container = document.getElementById("container");
+        var jsonGrid = null;
 
-        readTextFile("model/data.json", function (text) {
+        readTextFile(".././treefiles/trees.json", function (text) {
             data = JSON.parse(text);
-            console.log(data);
-            var jsonGrid = new JSONGrid(data, container);
+            console.log(data["trees"]);
+            jsonGrid = new JSONGrid(data["trees"], container);
             jsonGrid.render();
+
         });
     </script>
 </body>

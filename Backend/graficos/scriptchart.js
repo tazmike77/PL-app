@@ -74,13 +74,13 @@ function readTextFile(file, callback) {
 }
 
 window.onload = function () {
-    readTextFile("data.json", function (text) {
+    readTextFile(".././fileInfo.json", function (text) {
         data = JSON.parse(text);
         console.log(data);
 
         try {
-            data.items.map((item) => {
-                labels.push(item.data);
+            data.files.map((item) => {
+                labels.push(item.date);
                 ok_test.push(item.ok_test);
                 nok_test.push(item.nok_test);
                 ok_subtest.push(item.ok_subtest);
